@@ -9,9 +9,9 @@ artist = ''
 album = ''
 title = ''
 
-#Array for re parseing
+#Array for regex parseing
 split = []
-#Counts total songs
+#Song Counter
 count = 0
 
 #Path variable for mp3 folder (change accordingly)
@@ -37,7 +37,7 @@ for infile in glob.glob( os.path.join(path, '*/*/*.m4a') ):
 		print "title: " + title
 		count = count + 1
 		
-		#Sets Metadata tags
+		#Sets and Saves Metadata Variables
 		audio = mutagen.File(infile, easy=True)
 		audio["title"] = title
 		audio["album"] = album
